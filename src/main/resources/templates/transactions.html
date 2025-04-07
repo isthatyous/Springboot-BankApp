@@ -1,13 +1,19 @@
+
+
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Transaction History - Goldencat Bank</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Comfortable Dark Theme */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #000000, #ffd700);
-            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light gray text */
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -17,22 +23,33 @@
             flex-direction: column;
         }
 
+        /* Navbar Styling */
         .navbar-custom {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #262626; /* Darker navbar */
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-custom a {
-            color: #ffffff !important;
+            color: #e0e0e0 !important; /* Light gray text */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-custom a:hover {
+            color: #007bff !important; /* Blue on hover */
         }
 
         .navbar-custom .navbar-brand {
-            font-weight: bold;
+            font-size: 1.5rem;
+            color: #007bff !important; /* Blue brand text */
+            font-weight: 600;
         }
 
+        /* Container Styling */
         .container {
             max-width: 1000px;
             margin-top: 80px; /* Reduced margin for the table to be closer to the top */
@@ -40,48 +57,55 @@
         }
 
         h2 {
+            color: #007bff; /* Blue heading */
             margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 2rem;
         }
 
+        /* Table Styling */
         .table-custom {
-            background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+            background-color: #262626; /* Darker background for better contrast */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             overflow-x: auto; /* Ensures table is responsive */
         }
 
         .table-striped tbody tr:nth-of-type(odd) {
-            background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter row color */
+            background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter row color */
         }
 
         .table-striped td, .table-striped th {
-            color: #ffffff; /* White text color for visibility */
-            font-weight: bold; /* Bolder text for readability */
+            color: #e0e0e0; /* Light gray text color for visibility */
+            font-weight: 500; /* Medium text for readability */
             padding: 15px; /* Increase padding for better spacing */
-            border-bottom: 1px solid #ffd700; /* Yellow border for rows */
+            border-bottom: 1px solid #007bff; /* Blue border for rows */
         }
 
         .table-striped th {
-            background-color: rgba(255, 215, 0, 0.2); /* Light golden background for headers */
+            background-color: rgba(0, 123, 255, 0.2); /* Light blue background for headers */
+            font-weight: 600; /* Bold headers */
         }
 
         .text-success {
-            color: #28a745 !important;
+            color: #28a745 !important; /* Green for positive amounts */
         }
 
         .text-danger {
-            color: #dc3545 !important;
+            color: #dc3545 !important; /* Red for negative amounts */
         }
 
+        /* Links */
         .custom-link {
-            color: #ffd700;
+            color: #007bff; /* Blue links */
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .custom-link:hover {
-            color: #ffecb3;
+            color: #0056b3; /* Darker blue on hover */
             text-decoration: underline;
         }
     </style>
@@ -122,7 +146,7 @@
         </table>
     </div>
 
-    <p class="text-center"><a href="/dashboard" class="custom-link">Back to Dashboard</a></p>
+    <p class="text-center mt-3"><a href="/dashboard" class="custom-link">Back to Dashboard</a></p>
 </div>
 
 </body>
